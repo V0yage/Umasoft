@@ -1,0 +1,11 @@
+.inline-btn {
+	line-height: 1em;
+}
+
+.json-list td [type="text"] {
+	width: 100%;
+}
+
+.json-list tr:not(:last-child) td [type="text"] {
+	border: none;
+}
