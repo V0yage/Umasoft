@@ -41,13 +41,17 @@ export class EditorComponent implements OnInit {
   }
   
   appendRecord() {
-	  console.log(typeof this.newRecord);
-	  return;
-	  
 	  let recordValues = Object.values(this.newRecord);
-	  let isEmptyRecord = recordValues.every(propValue => propValue.trim().length == 0);
+	  let isFillRecord = false;
+	  for (let count = 0; count < recordsValues.length; count++) {
+		if (recordsValues[count].trim().length == 0) {
+		  isFillRecord = true;
+		  break;	  
+		}
+	  }
+	  //let isEmptyRecord = recordValues.every((propValue: string) => propValue.trim().length == 0);
 
-	  if (isEmptyRecord) {
+	  if (!isFillRecord) {
 		  alert("Record wasn't empty!");
 		  return;
 	  }
