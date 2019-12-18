@@ -49,7 +49,6 @@ export class EditorComponent implements OnInit {
 		  break;	  
 		}
 	  }
-	  //let isEmptyRecord = recordValues.every((propValue: string) => propValue.trim().length == 0);
 
 	  if (!isFillRecord) {
 		  alert("Record wasn't empty!");
