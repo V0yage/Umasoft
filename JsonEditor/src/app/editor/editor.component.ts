@@ -41,6 +41,9 @@ export class EditorComponent implements OnInit {
   }
   
   appendRecord() {
+	  console.log(typeof this.newRecord);
+	  return;
+	  
 	  let recordValues = Object.values(this.newRecord);
 	  let isEmptyRecord = recordValues.every(propValue => propValue.trim().length == 0);
 
