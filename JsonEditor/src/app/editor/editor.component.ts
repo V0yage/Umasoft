@@ -36,19 +36,12 @@ export class EditorComponent implements OnInit {
   
   showInEditor() {
 	  this.rawJSON = JSON.stringify(this.products);
-	  
 	  this.isFullTextEditing = true;
   }
   
   appendRecord() {
-	  let recordValues = Object.values(this.newRecord);
-	  let isFillRecord = false;
-	  for (let count = 0; count < recordsValues.length; count++) {
-		if (recordsValues[count].trim().length == 0) {
-		  isFillRecord = true;
-		  break;	  
-		}
-	  }
+	  let recordValues: string[] = Object.values(this.newRecord);
+	  let isFillRecord = recordValues.some(propValue => propValue.trim().length > 0);
 
 	  if (!isFillRecord) {
 		  alert("Record wasn't empty!");
